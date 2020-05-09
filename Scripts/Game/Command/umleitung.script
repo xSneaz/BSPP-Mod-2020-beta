@@ -45,7 +45,7 @@ object redirectact : CommandScript
 	{
 		cmdMode = 0;
 		markerMode = 2;
-		Caller->AssignCommand("rediriger");
+		Caller->AssignCommand("umleiten");
 		GameObjectList gol(Caller->GetName());
 		for(int i = 0; i < gol.GetNumObjects(); i++)
 		{
@@ -63,9 +63,9 @@ object redirectact : CommandScript
 	}
 };
 
-object rediriger : CommandScript
+object umleiten : CommandScript
 {
-	rediriger()
+	umleiten()
 	{
 		SetDeselectCaller(false);
 		SetHighlightingEnabled(false);
@@ -126,9 +126,9 @@ object rediriger : CommandScript
 						else 
 							Game::ShowHelpTextWindow(eng_redirectC);
 						p.SetEquipment(EQUIP_REDIRECTSIGN);
-						p.RemoveCommand("rediriger");
+						p.RemoveCommand("umleiten");
 						p.SetAnimation("sendvehicle");
-						p.PushActionExecuteCommand(ACTION_APPEND, "dummyrediriger", &mainMarker, 0, false);
+						p.PushActionExecuteCommand(ACTION_APPEND, "dummyumleiten", &mainMarker, 0, false);
 					}
 				}
 			}
@@ -143,9 +143,9 @@ object rediriger : CommandScript
 	}
 };
 
-object dummyrediriger : CommandScript
+object dummyumleiten : CommandScript
 {
-	dummyrediriger()
+	dummyumleiten()
 	{
 		
 	}
@@ -168,7 +168,7 @@ object dummyrediriger : CommandScript
 					DUMMY.Hide();
 					DUMMY.SetUserData(gList.GetObject(i)->GetID());
 					DUMMY.SetPosition(gList.GetObject(i)->GetPosition());
-					DUMMY.PushActionExecuteCommand(ACTION_NEWLIST, "dummyrediriger", Caller, 1, false);
+					DUMMY.PushActionExecuteCommand(ACTION_NEWLIST, "dummyumleiten", Caller, 1, false);
 				}
 			}
 		}
@@ -227,11 +227,11 @@ object dummyrediriger : CommandScript
 								}
 							}
 						}
-						v.PushActionExecuteCommand(ACTION_APPEND, "dummyrediriger", &currentPath, 2, false);
+						v.PushActionExecuteCommand(ACTION_APPEND, "dummyumleiten", &currentPath, 2, false);
 					}
 				}
 				main.PushActionWait(ACTION_NEWLIST, 1);
-				main.PushActionExecuteCommand(ACTION_APPEND, "dummyrediriger", &p, 1, false);
+				main.PushActionExecuteCommand(ACTION_APPEND, "dummyumleiten", &p, 1, false);
 			}
 		}
 		else if(childID == 2)
