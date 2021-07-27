@@ -736,25 +736,22 @@ object VcmdToFireStation : CommandScript
 		{
 			FirstReturnParking(Caller, "UMH_sprinter", VO_SQUAD_SAMU, PROTO_UMHSPRINTER, "VO_UMH_merco_R", "");
 		}
-
 		else if(StrCompare(v.GetPrototypeFileName(), PROTO_VLMKANGOO) == 0)
 		{
 			FirstReturnParking(Caller, "VLM_kangoo", VO_SQUAD_SAMU, PROTO_VLMKANGOO, "VO_VLMkangoo_R", "");
 		}
-
+		
 		else if(StrCompare(v.GetPrototypeFileName(), PROTO_ERDF) == 0)
 		{
-			FirstReturnParking(Caller, "ERDF_1", VO_SQUAD_TEC, PROTO_GRDF, "VO_ERDF_1_R", "");
+			FirstReturnParking(Caller, "ERDF_1", VO_SQUAD_SAMU, PROTO_ERDF, "VO_ERDF_1_R", "");
 		}
-
 		else if(StrCompare(v.GetPrototypeFileName(), PROTO_ERDF) == 0)
 		{
-			FirstReturnParking(Caller, "ERDF_2", VO_SQUAD_TEC, PROTO_GRDF, "VO_ERDF_2_R", "");
+			FirstReturnParking(Caller, "ERDF_2", VO_SQUAD_SAMU, PROTO_ERDF, "VO_ERDF_2_R", "");
 		}
-
 		else if(StrCompare(v.GetPrototypeFileName(), PROTO_GRDF) == 0)
 		{
-			FirstReturnParking(Caller, "GRDF", VO_SQUAD_TEC, PROTO_GRDF, "VO_GRDF_R", "");
+			FirstReturnParking(Caller, "GRDF", VO_SQUAD_SAMU, PROTO_GRDF, "VO_GRDF_R", "");
 		}
 
 		else
@@ -1218,15 +1215,15 @@ object DummyCheckParked : CommandScript
 		//TEC
 		else if(StrCompare(v.GetPrototypeFileName(), PROTO_ERDF) == 0)
 		{
-			EndReturnParking(Caller, "ERDF_1", VO_SQUAD_TEC);
+			EndReturnParking(Caller, "ERDF_1", VO_SQUAD_SAMU);
 		}
 		else if(StrCompare(v.GetPrototypeFileName(), PROTO_ERDF) == 0)
 		{
-			EndReturnParking(Caller, "ERDF_2", VO_SQUAD_TEC);
+			EndReturnParking(Caller, "ERDF_2", VO_SQUAD_SAMU);
 		}
 		else if(StrCompare(v.GetPrototypeFileName(), PROTO_GRDF) == 0)
 		{
-			EndReturnParking(Caller, "GRDF", VO_SQUAD_TEC);
+			EndReturnParking(Caller, "GRDF", VO_SQUAD_SAMU);
 		}
 	}
 };
