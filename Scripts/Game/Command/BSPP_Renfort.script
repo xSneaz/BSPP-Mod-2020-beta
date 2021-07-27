@@ -2168,7 +2168,7 @@ object Renfort_PNC8 : CommandScript
 {
 	Renfort_PNC8()
 	{
-		SetIcon("c8pn");
+		SetIcon("callassistance");
 		SetCursor("callassistance");
 		SetValidTargets(ACTOR_FLOOR | ACTOR_VIRTUAL);
 	}
